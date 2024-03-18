@@ -3,8 +3,8 @@ kind: PostgresCluster
 metadata:
   name: hippo
 spec:
-  image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-16.2-0
-  postgresVersion: 16
+  image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-15.2-0
+  postgresVersion: 15
   instances:
     - name: instance1
       dataVolumeClaimSpec:
@@ -13,6 +13,7 @@ spec:
         resources:
           requests:
             storage: 1Gi
+        storageClassName: storage-pure-ar-izanami-1a
   backups:
     pgbackrest:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.49-0
@@ -25,3 +26,9 @@ spec:
             resources:
               requests:
                 storage: 1Gi
+            storageClassName: storage-pure-ar-izanami-1a
+  users:
+    - name: sonarqube
+      databases:
+      - sonardb
+      options: "SUPERUSER"
