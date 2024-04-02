@@ -16,7 +16,7 @@ spec:
         storageClassName: storage-pure-ar-izanami-1a
   backups:
     pgbackrest:
-      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.49-0
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.41-0
       repos:
       - name: repo1
         volume:
