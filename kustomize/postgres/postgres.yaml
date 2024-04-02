@@ -12,7 +12,7 @@ spec:
         - "ReadWriteOnce"
         resources:
           requests:
-            storage: 1Gi
+            storage: 50Gi
         storageClassName: storage-pure-ar-izanami-1a
   backups:
     pgbackrest:
@@ -25,7 +25,7 @@ spec:
             - "ReadWriteOnce"
             resources:
               requests:
-                storage: 1Gi
+                storage: 50Gi
             storageClassName: storage-pure-ar-izanami-1a
   users:
     - name: sonarqube
